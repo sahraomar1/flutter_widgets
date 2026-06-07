@@ -12,80 +12,67 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Container Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: const ProductCardScreen(),
+      home: const SimpleCardScreen(),
     );
   }
 }
 
-class ProductCardScreen extends StatelessWidget {
-  const ProductCardScreen({super.key});
+class SimpleCardScreen extends StatelessWidget {
+  const SimpleCardScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Shopping App - Product Card'),
-        centerTitle: true,
+        title: const Text('Container Widget Demo'),
       ),
       body: const Center(
-        child: ProductCard(),
+        child: MyProductCard(),
       ),
     );
   }
 }
 
-class ProductCard extends StatelessWidget {
-  const ProductCard({super.key});
+class MyProductCard extends StatelessWidget {
+  const MyProductCard({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      // Properties we'll demonstrate
-      width: 300,
-      height: 380,
-      margin: const EdgeInsets.all(20),
+      width: 280,
+      height: 340,
+      margin: const EdgeInsets.all(24),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(20),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.3),
-            spreadRadius: 5,
-            blurRadius: 10,
-            offset: const Offset(0, 5),
-          ),
-        ],
+        borderRadius: BorderRadius.circular(16),
       ),
       child: Column(
         children: [
-          // Product Image
           Container(
-            height: 180,
-            decoration: BoxDecoration(
-              color: Colors.blue[100],
-              borderRadius: BorderRadius.circular(15),
-            ),
-            child: const Center(
-              child: Icon(Icons.image, size: 80, color: Colors.blue),
-            ),
+            height: 160,
+            width: double.infinity,
+            color: Colors.blue[100],
+            child: const Icon(Icons.headphones, size: 90, color: Colors.blue),
           ),
           const SizedBox(height: 16),
           const Text(
             'Wireless Headphones',
-            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
-          const SizedBox(height: 8),
           const Text(
-            '\$89.99',
-            style: TextStyle(fontSize: 20, color: Colors.green),
+            '\$79.99',
+            style: TextStyle(fontSize: 18, color: Colors.green),
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 20),
           ElevatedButton(
             onPressed: () {
+              // This shows a message when you tap "Add to Cart"
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Added to cart!')),
+                const SnackBar(
+                  content: Text('Added to Cart!'),
+                  duration: Duration(seconds: 2),
+                ),
               );
             },
             child: const Text('Add to Cart'),
