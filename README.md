@@ -1,16 +1,14 @@
 # Flutter Container Widget Demo
 
-**Widget**: Container - Used to create styled boxes/cards in apps.
-
-**Real-world use case**: Product card in a shopping mobile app.
+**Widget**: Container  
+**Use Case**: Product card in a shopping app
 
 ## How to Run
-1. Clone or download this repo.
-2. Open in VS Code.
-3. Run `flutter pub get`
-4. Run `flutter run` 
+1. Open this project in VS Code.
+2. Run `flutter pub get` in the terminal.
+3. Run `flutter run` 
 
-## Three Important Properties
-1. **width & height** - Sets the size of the card. Changing these makes the card bigger or smaller.
-2. **padding** - Adds space inside the card (around the content).
-3. **margin** - Adds space outside the card (distance from screen edges).
+## Three Properties Demonstrated
+1. **width** - Controls how wide the card is.
+2. **height** - Controls how tall the card is.
+3. **padding** - Adds space inside the card.
